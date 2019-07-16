@@ -20,7 +20,6 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-// 1rem = 1/2*100
 @import '~styles/varibles.styl'
   .header
     display: flex
