@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <header>
+    <meta charset="utf-8">
+    <title>111</title>
+    <script src="./vue.js"></script>
+</header>
+  <body>
+    <div id="app">
+      <div v-if="show === 'a'">aaaaa</div>
+      <div v-else-if="show === 'b'">bbbbb</div>
+      <div v-else>cccccc</div>
+    </div>
+
+    <script>
+    var vm = new Vue({
+      el:'#app',
+      data:{
+        show:'a',
+      },
+      computed: {
+        
+      },
+      components:{
+        
+      },
+      methods:{
+        
+      }
+    })
+    </script>
+  </body>
+</html>

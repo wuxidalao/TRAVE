@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <header>
+    <meta charset="utf-8">
+    <title>列表渲染</title>
+    <script src="./vue.js"></script>
+</header>
+  <body>
+    <div id="app">
+      <!-- 操作数组的方法：push pop shift unshift splice sort reverse -->
+      <!-- 通过下标值改变数组，只能改变数据，无法改变页面 -->
+      <div v-for="(item,index) of list" :key="item.id">
+        <!-- 提供性能添加key值：唯一 不要使用index 一般使用数据表id -->
+        {{item.text}}---{{index}}
+      </div>
+    </div>
+
+    <script>
+    var vm = new Vue({
+      el:'#app',
+      data:{
+        list:[
+          {id:'001',text:'a'},
+          {id:'002',text:'b'},
+          {id:'003',text:'c'},
+        ]
+      },
+      computed: {
+        
+      },
+      components:{
+        
+      },
+      methods:{
+        
+      }
+    })
+    </script>
+  </body>
+</html>

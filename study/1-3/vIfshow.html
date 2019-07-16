@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <header>
+    <meta charset="utf-8">
+    <title>111</title>
+    <script src="./vue.js"></script>
+</header>
+  <body>
+    <div id="app">
+      <div v-if="show" data-test="v-if">{{message}}</div>
+      <!-- 在页面显示dom 在页面删除dom -->
+      <div v-show="show" data-test="v-show">{{message}}</div>
+      <!-- 在页面隐藏dom 在页面显示dom -->
+    </div>
+
+    <script>
+    var vm = new Vue({
+      el:'#app',
+      data:{
+        show:false,
+        message:"hello word"
+      },
+      computed: {
+        
+      },
+      components:{
+        
+      },
+      methods:{
+        
+      }
+    })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<header>
+  <meta charset="utf-8">
+  <title>Vue中的 Js 动画与 Velocity.js 的结合</title>
+  <script src="./vue.js"></script>
+  <script src="./velocity.min.js"></script>
+</header>
+
+<body>
+  <div id="app">
+    <transition
+     name="fade"
+     @before-enter="handleBeforeEnter"
+     @enter="handleEnter"
+     @after-enter="handleAfter"
+     >
+      <div v-show="show">hello word</div>
+    </transition>
+    <button @click="handleClick">切换</button>
+  </div>
+
+  <script>
+    var vm = new Vue({
+      el: '#app',
+      data: {
+        show:true
+      },
+      methods: {
+        handleClick(){
+          this.show = !this.show
+        },
+        handleBeforeEnter(el){
+          el.style.opacity = 0;
+        },
+        handleEnter(el,done){
+          Velocity(el,{opacity:1},{duration:1000,complete:done})
+        },
+        handleAfter(el){
+          alert("动画结束")
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

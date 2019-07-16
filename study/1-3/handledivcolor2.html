@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <header>
+    <meta charset="utf-8">
+    <title>111</title>
+    <script src="./vue.js"></script>
+    <style>
+    .activated{ color:red;}
+    </style>
+</header>
+  <body>
+    <div id="app">
+      <div @click="handleDivColor" :class="[activated]">hello word</div>
+    </div>
+
+    <script>
+    var vm = new Vue({
+      el:'#app',
+      data:{
+        activated:''
+      },
+      methods:{
+        handleDivColor(){
+          this.activated === 'activated' ? this.activated = '' : this.activated = 'activated'
+        }
+      }
+    })
+    </script>
+  </body>
+</html>

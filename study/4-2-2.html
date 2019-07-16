@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<header>
+  <meta charset="utf-8">
+  <title>组件的数据传递</title>
+  <script src="./vue.js"></script>
+</header>
+
+<body>
+  <div id="app">
+    <counter :count="1" @change="changeNumber"></counter>
+    <counter :count="2" @change="changeNumber"></counter>
+    <div>{{total}}</div>
+  </div>
+
+  <script>
+    var counter = {
+      props: ['count'],
+      data: function () {
+        return {
+          number: this.count
+        }
+      },
+      template: '<div @click="handleClick">{{number}}</div>',
+      methods: {
+        handleClick() {
+          this.number = this.number + 2
+          this.$emit('change', 2)
+        }
+      }
+    }
+
+    var vm = new Vue({
+      el: '#app',
+      data:{
+        total:3
+      },
+      methods:{
+        changeNumber(step){
+          this.total += step
+        }
+      },
+      components: {
+        counter: counter
+      }
+    })
+  </script>
+</body>
+
+</html>

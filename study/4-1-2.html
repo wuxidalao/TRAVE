@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <header>
+    <meta charset="utf-8">
+    <title>子组件中的data是函数</title>
+    <script src="./vue.js"></script>
+</header>
+  <body>
+    <div id="app">
+      <table>
+        <tbody>
+          <tr is="row"></tr><!-- 正确写法 -->
+        </tbody>
+      </table>
+    </div>
+
+    <script>
+    Vue.component('row',{
+      data(){
+        return{
+          content:"这是子组件的值"
+        }
+      },
+      // 在子组件中定义data 必须是个函数 不能跟父组件一样是对象
+      template:"<tr><td>{{content}}</td></tr>"
+    })
+    var vm = new Vue({
+      el:'#app',
+      data:{
+
+      },
+      computed: {
+        
+      },
+      components:{
+        
+      },
+      methods:{
+        
+      }
+    })
+    </script>
+  </body>
+</html>

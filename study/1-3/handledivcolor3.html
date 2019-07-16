@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <header>
+    <meta charset="utf-8">
+    <title>111</title>
+    <script src="./vue.js"></script>
+    <style>
+  
+    </style>
+</header>
+  <body>
+    <div id="app">
+      <div :style="[styleObj,{fontSize:'20px'}]" @click='handleDivClick'>hello word</div>
+    </div>
+
+    <script>
+    var vm = new Vue({
+      el:'#app',
+      data:{
+        styleObj:{
+          color: 'red'
+        }
+      },
+      methods:{
+        handleDivClick(){
+          this.styleObj.color = this.styleObj.color === 'red'?
+          'blue' : 'red'
+        }
+      }
+    })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<header>
+  <meta charset="utf-8">
+  <title>Vue中的css动画</title>
+  <script src="./vue.js"></script>
+  <style>
+    .v-enter,
+    .v-leave-to {
+      opacity: 0;
+    }
+    .v-enter-active,
+    .v-leave-active {
+      transition: opacity 1s;
+    }
+  </style>
+</header>
+
+<body>
+  <div id="app">
+    <transition>
+      <div v-if="show">hello</div>
+    </transition>
+    <button @click="handleClick">动画</button>
+  </div>
+
+  <script>
+    var vm = new Vue({
+      el: '#app',
+      data: {
+        show:true
+      },
+      computed: {
+
+      },
+      components: {
+
+      },
+      methods: {
+        handleClick(){
+          this.show = !this.show
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
