@@ -2,7 +2,7 @@
   <div>
     <div class="title">热销推荐</div>
     <ul>
-      <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
+      <li class="item border-bottom" v-for="item of list" :key="item.id">
         <img class="item-img" :src="item.imgUrl">
         <div class="item-info">
           <p class="item-title">{{item.title}}</p>
@@ -17,12 +17,8 @@
 <script>
 export default {
   name: 'HomeRecommend',
-  data () {
-    return {
-      recommendList: [
-        {id: '0', imgUrl: 'http://img1.qunarzz.com/sight/p0/1605/28/288e0ccf38a6f3d990.img.jpg_200x200_3d6ee528.jpg', title: '大连圣亚海洋世界', desc: '浪漫大连首站胜利大街发来的浪漫大连首站胜利大街发来的'}
-      ]
-    }
+  props: {
+    list: Array
   }
 }
 </script>
