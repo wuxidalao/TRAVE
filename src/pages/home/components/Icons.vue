@@ -1,6 +1,6 @@
 <template>
   <div class="icons">
-    <swiper>
+    <swiper :options="swiperOption" >
       <swiper-slide v-for="(page, index) of pages" :key="index">
         <div class="icon" v-for="item of page" :key="item.iconid">
           <div class="icon-img">
@@ -18,6 +18,9 @@ export default {
   name: 'HomeIcons',
   data () {
     return {
+      swiperOption: {
+        loop: false // 支持循环轮播
+      },
       iconsList: [
         {iconId: '001', iconUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png', desc: '景点门票'},
         {iconId: '002', iconUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png', desc: '名胜古迹'},
