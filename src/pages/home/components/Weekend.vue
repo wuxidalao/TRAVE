@@ -1,13 +1,14 @@
 <template>
   <div>
-    <div class="title">热销推荐</div>
+    <div class="title">周末去哪</div>
     <ul>
       <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
-        <img class="item-img" :src="item.imgUrl">
+        <div class="item-img-wrapper">
+          <img class="item-img" :src="item.imgUrl">
+        </div>
         <div class="item-info">
           <p class="item-title">{{item.title}}</p>
           <p class="item-desc">{{item.desc}}</p>
-          <button class="item-button">查看详情</button>
         </div>
       </li>
     </ul>
@@ -16,11 +17,11 @@
 
 <script>
 export default {
-  name: 'HomeRecommend',
+  name: 'HomeWeekend',
   data () {
     return {
       recommendList: [
-        {id: '0', imgUrl: 'http://img1.qunarzz.com/sight/p0/1605/28/288e0ccf38a6f3d990.img.jpg_200x200_3d6ee528.jpg', title: '大连圣亚海洋世界', desc: '浪漫大连首站胜利大街发来的浪漫大连首站胜利大街发来的'}
+        {id: '001', imgUrl: 'http://img1.qunarzz.com/sight/source/1511/fd/0285e145e82233.jpg_r_640x214_b5f10121.jpg', title: '大连圣亚海洋世界', desc: '浪漫大连首站胜利大街发来的浪漫铃声多多大连首站胜利大街发来的'}
       ]
     }
   }
@@ -34,18 +35,18 @@ export default {
     line-height .8rem
     background #eee
     text-indent .2rem
-  .item
-    overflow hidden
-    display flex
-    height 1.9rem
+  // .item
+  //   overflow hidden
+  //   display flex
+  //   height 1.9rem
+    .item-img-wrapper
+      overflow hidden
+      height 0
+      padding-bottom 33.9%
     .item-img
-      width 1.7rem
-      height 1.7rem
-      padding .1rem
+      width 100%
     .item-info
-      flex 1
       padding .1rem
-      min-width 0
     .item-title
       font-size .32rem
       line-height .54rem
@@ -53,11 +54,4 @@ export default {
       line-height .4rem
       color: #ccc
       ellipsis()
-    .item-button
-      line-height .44rem
-      margin-top .16rem
-      background #ff9300
-      padding 0 .2rem
-      border-radius .06rem
-      color #fff
 </style>
