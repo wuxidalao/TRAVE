@@ -38,14 +38,14 @@ export default {
     }
   },
   updated () {
-    this.startY = this.$refs['A'][0].offsetTop
+    this.startY = this.$refs['A'][0].offsetTop // 字母A距离顶部的高度
   },
   methods: {
     handleLetterClick (e) {
       this.$emit('change', e.target.innerText) // 获取当前点击的字母
     },
     handleTouchStart () {
-      this.touchStartus = true // 字母A距离顶部的高度
+      this.touchStartus = true 
     },
     handleTouchMove (e) {
       if (this.touchStartus) {
@@ -59,7 +59,7 @@ export default {
             this.$emit('change', this.letters[index])
           }
           console.log(this.letters[index])
-        },16)
+        }, 16)
       }
     },
     handleTouchEnd () {
