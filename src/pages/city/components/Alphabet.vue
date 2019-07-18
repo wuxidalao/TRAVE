@@ -22,7 +22,7 @@ export default {
     cities: Object
   },
   computed: {
-    letters () {
+    letters () { // 创建一个letters数字
       const letters = []
       for (let i in this.cities) {
         letters.push(i)
@@ -37,16 +37,16 @@ export default {
   },
   methods: {
     handleLetterClick (e) {
-      this.$emit('change', e.target.innerText)
+      this.$emit('change', e.target.innerText) // 获取当前点击的字母
     },
     handleTouchStart () {
       this.touchStartus = true
     },
     handleTouchMove (e) {
       if (this.touchStartus) {
-        const startY = this.$refs['A'][0].offsetTop
-        const touchY = e.touches[0].clientY - 79
-        const index = Math.floor((touchY - startY) / 20)
+        const startY = this.$refs['A'][0].offsetTop // 字母A距离顶部的高度
+        const touchY = e.touches[0].clientY - 79 // 手指点击的位置距离顶部的高度
+        const index = Math.floor((touchY - startY) / 20) // 两者相减 除以每个字母的高度20px(css设置的.4rem) 获得点击的是第几个字母
         if (index >= 0 && index < this.letters.length) {
           this.$emit('change', this.letters[index])
         }
