@@ -31,7 +31,7 @@ export default {
     display: flex
     align-items: center
     height: .86rem
-    background: $bjColor
+    background: $blueColor
     color: #fff
     .header-left
       width: .64rem

@@ -22,7 +22,7 @@ export default {
     line-height .86rem
     text-align center
     color #fff
-    background $bjColor
+    background $blueColor
     font-size .32rem
     .header-icon
       position absolute

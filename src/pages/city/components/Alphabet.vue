@@ -23,7 +23,7 @@ export default {
 
 <style lang="stylus" scoped>
 @import '~styles/varibles.styl'
-.lilst
+.list
   display flex
   flex-direction column
   justify-content center
@@ -35,5 +35,5 @@ export default {
 .item
   text-align center
   line-height .4rem
-  color $bjColor
+  color $blueColor
 </style>
