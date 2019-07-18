@@ -78,11 +78,11 @@
 </template>
 
 <script>
-import BScroll from '@better-scroll'
+import Bscroll from '@better-scroll'
 export default {
   name: 'CityList',
   mounted () {
-    this.scroll = new BScroll(this.$refs.wrapper)
+    this.scroll = new Bscroll(this.$refs.wrapper)
   }
 }
 </script>
