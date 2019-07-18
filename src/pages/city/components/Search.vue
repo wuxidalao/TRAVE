@@ -15,7 +15,7 @@ export default {
   .search
     height .72rem
     padding 0 .1rem
-    background $bjColor
+    background $blueColor
     .search-input
       box-sizing border-box
       height .62rem
