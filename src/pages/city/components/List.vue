@@ -1,5 +1,5 @@
 <template>
-  <div class="list" :ref="wrapper">
+  <div class="list" ref="wrapper">
     <div>
       <!-- 当前城市 -->
       <div class="area">
@@ -78,11 +78,11 @@
 </template>
 
 <script>
-import Bscroll from '@better-scroll'
+import BScroll from 'better-scroll'
 export default {
   name: 'CityList',
   mounted () {
-    this.scroll = new Bscroll(this.$refs.wrapper)
+    this.scroll = new BScroll(this.$refs.wrapper)
   }
 }
 </script>
