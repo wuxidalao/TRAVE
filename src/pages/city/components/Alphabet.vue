@@ -32,25 +32,34 @@ export default {
   },
   data () {
     return {
-      touchStartus: false
+      touchStartus: false,
+      startY: 0,
+      timer: null
     }
+  },
+  updated () {
+    this.startY = this.$refs['A'][0].offsetTop
   },
   methods: {
     handleLetterClick (e) {
       this.$emit('change', e.target.innerText) // 获取当前点击的字母
     },
     handleTouchStart () {
-      this.touchStartus = true
+      this.touchStartus = true // 字母A距离顶部的高度
     },
     handleTouchMove (e) {
       if (this.touchStartus) {
-        const startY = this.$refs['A'][0].offsetTop // 字母A距离顶部的高度
-        const touchY = e.touches[0].clientY - 79 // 手指点击的位置距离顶部的高度
-        const index = Math.floor((touchY - startY) / 20) // 两者相减 除以每个字母的高度20px(css设置的.4rem) 获得点击的是第几个字母
-        if (index >= 0 && index < this.letters.length) {
-          this.$emit('change', this.letters[index])
+        if (this.timer) {
+          clearTimeout(this.timer)
         }
-        console.log(this.letters[index])
+        this.timer = setTimeout(() => {
+          const touchY = e.touches[0].clientY - 79 // 手指点击的位置距离顶部的高度
+          const index = Math.floor((touchY - this.startY) / 20) // 两者相减 除以每个字母的高度20px(css设置的.4rem) 获得点击的是第几个字母
+          if (index >= 0 && index < this.letters.length) {
+            this.$emit('change', this.letters[index])
+          }
+          console.log(this.letters[index])
+        },16)
       }
     },
     handleTouchEnd () {
