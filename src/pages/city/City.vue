@@ -2,8 +2,8 @@
   <div>
     <CityHeader></CityHeader>
     <CitySearch></CitySearch>
-    <CityList></CityList>
-    <CityAlphabet></CityAlphabet>
+    <CityList :cities="cities" :hot="hotCities"></CityList>
+    <CityAlphabet :cities="cities"></CityAlphabet>
   </div>
 </template>
 
@@ -23,6 +23,12 @@ export default {
     CityList,
     CityAlphabet
   },
+  data () {
+    return {
+      cities: {},
+      hotCities: []
+    }
+  },
   methods: {
     getCityInfo () {
       axios.get('/api/city.json')
@@ -31,7 +37,9 @@ export default {
     getCityInfoSucc (res) {
       res = res.data
       if (res.ret && res.data) {
-        console.log(res)
+        const data = res.data
+        this.cities = data.cities
+        this.hotCities = data.hotCities
       }
     }
   },
