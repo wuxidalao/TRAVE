@@ -21,7 +21,7 @@ import {mapState} from 'vuex'
 export default {
   name: 'HomeHearder',
   computed: {
-    ...mapState(['city'])// 使用计算属性映射city 直接使用this.city调用
+    ...mapState(['city'])
   }
 }
 </script>
