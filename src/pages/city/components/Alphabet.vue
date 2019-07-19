@@ -45,7 +45,7 @@ export default {
       this.$emit('change', e.target.innerText) // 获取当前点击的字母
     },
     handleTouchStart () {
-      this.touchStartus = true 
+      this.touchStartus = true
     },
     handleTouchMove (e) {
       if (this.touchStartus) {
