@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import store from './store' // vuex插件
 import VueAwesomeSwiper from 'vue-awesome-swiper'// 轮播图片插件
 import fastClick from 'fastClick'// 移动端300毫秒点击延迟问题解决
 import 'swiper/dist/css/swiper.css'
@@ -18,6 +19,7 @@ Vue.use(VueAwesomeSwiper /* { default global options } */)
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })
