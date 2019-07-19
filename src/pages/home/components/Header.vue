@@ -9,7 +9,7 @@
     </div>
     <router-link to='/city'>
       <div class="header-right">
-        {{this.$store.state.city}}
+        <div>{{this.city}}</div>
         <span class="iconfont arrow-icon">&#xe6aa;</span>
       </div>
     </router-link>
@@ -17,10 +17,11 @@
 </template>
 
 <script>
+import {mapState} from 'vuex'
 export default {
   name: 'HomeHearder',
-  props: {
-    city: String
+  computed: {
+    ...mapState(['city'])// 使用计算属性映射city 直接使用this.city调用
   }
 }
 </script>
@@ -50,14 +51,12 @@ export default {
       border-radius: .1rem
       color: #cccccc
     .header-right
-      width: 1.24rem
-      display block
+      min-width 1.24rem
+      padding 0 .1rem
+      display flex
       float: right
       text-align: center
       color: #fff
-      overflow hidden
-      white-space nowrap
-      // text-overflow ellipsis
       .arrow-icon
         font-size: .24rem
         margin-left: .04rem
