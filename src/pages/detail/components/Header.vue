@@ -61,6 +61,7 @@ export default {
   justify-content center
   align-items center
 .header-fixe
+  z-index 2
   position fixed
   top 0
   left 0
