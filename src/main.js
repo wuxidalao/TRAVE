@@ -4,6 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import store from './store' // vuex插件
+import 'babel-polyfill' // 解决安卓机不支持promise问题
 import VueAwesomeSwiper from 'vue-awesome-swiper'// 轮播图片插件
 import fastClick from 'fastClick'// 移动端300毫秒点击延迟问题解决
 import 'swiper/dist/css/swiper.css'
