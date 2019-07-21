@@ -23,5 +23,10 @@ export default new Router({
       name: 'Detail',
       component: Detail
     }
-  ]
+  ],
+  scrollBehavior (to, from, savedPosition) {
+    return { x: 0, y: 0 }
+    // 解决scroll拖动对页面初始位置的影响
+    // 每次做路由切换的时候，让页面的初始位置x、y为0
+  }
 })
